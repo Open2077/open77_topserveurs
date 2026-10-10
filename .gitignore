@@ -1,0 +1,20 @@
+# Resource runtime data (KVP voter ledger)
+data/
+
+# Local server configuration and credentials
+server.jsonc
+acl.jsonc
+tunables.json
+.env
+*.log
+
+# Claude / AI agent files
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# Editors and OS
+.idea/
+*.swp
+.DS_Store

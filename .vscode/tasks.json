@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "open77_topserveurs: syntax check",
+      "detail": "luac -p over every file but the manifest, which is not standard Lua.",
+      "type": "shell",
+      "command": "find . -name '*.lua' -not -name 'open77.lua' -not -path './.git/*' -exec luac -p {} +",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}

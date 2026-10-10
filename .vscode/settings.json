@@ -1,0 +1,22 @@
+{
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  },
+
+  // open77.lua is a declarative manifest, not a script: the language server
+  // would flag every line of it as an undefined global call.
+  "Lua.diagnostics.ignoredFiles": "Disable",
+  "Lua.workspace.ignoreDir": [".git", "dist"],
+
+  "search.exclude": {
+    "**/.git": true
+  }
+}

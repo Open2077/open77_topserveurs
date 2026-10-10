@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime.version": "Lua 5.4",
+  "runtime.pathStrict": true,
+  "runtime.path": [
+    "?.lua",
+    "?/init.lua"
+  ],
+  "workspace.checkThirdParty": false,
+  "workspace.library": [
+    "std"
+  ],
+  "diagnostics.globals": [
+    "TS",
+    "Open77",
+    "source",
+    "CreateThread",
+    "Wait",
+    "SetTimeout",
+    "GetGameTimer",
+    "AddEventHandler",
+    "TriggerEvent",
+    "RegisterNetEvent",
+    "TriggerClientEvent",
+    "RegisterCommand",
+    "GetCurrentResourceName",
+    "GetConvar",
+    "PerformHttpRequest",
+    "exports",
+    "json",
+    "print",
+    "GetInvokingResource"
+  ],
+  "diagnostics.disable": [
+    "lowercase-global",
+    "luadoc-miss-symbol",
+    "unknown-doc-tag",
+    "undefined-doc-name",
+    "undefined-doc-param-name",
+    "doc-field-no-class"
+  ],
+  "diagnostics.severity": {
+    "undefined-global": "Error",
+    "unused-local": "Warning",
+    "unused-function": "Warning"
+  },
+  "format.enable": true,
+  "format.defaultConfig": {
+    "indent_style": "tab",
+    "quote_style": "single"
+  },
+  "workspace.ignoreDir": [
+    ".claude"
+  ]
+}
