@@ -1,0 +1,42 @@
+name: Feature request
+description: A new vote method, export, event, command or option.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What you are trying to do with votes on your server, and what stops you today.
+      placeholder: We want to reward a vote streak of 7 days, but ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The export, event, command or config option you would like, with an example of how you would use it.
+      render: lua
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: What you do instead today (your own `topserveurs:vote` handler, `GetVoter`...).
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Part of the resource
+      options:
+        - Vote detection (webhook, claims, auto-check)
+        - Stats and ranking
+        - Exports and events
+        - Commands and ACL
+        - Locales and messages
+        - Reward examples
+        - Other
+    validations:
+      required: true

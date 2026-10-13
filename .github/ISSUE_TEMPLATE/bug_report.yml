@@ -1,0 +1,113 @@
+name: Bug report
+description: Votes are not received, not counted, counted twice, or a command or export misbehaves.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. This tracker is for **open77_topserveurs** only. A problem with your
+        Top-Serveurs listing or account belongs to [Top-Serveurs](https://top-serveurs.net); a reward
+        that is not paid by your own `topserveurs:vote` handler belongs to your code or framework.
+
+        **Never paste your Top-Serveurs token.** It is never printed to the console, even with `DEBUG = true`.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+      placeholder: |
+        A player voted with Steam, the webhook test works, but /vote answers "no vote found".
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where it fails
+      options:
+        - Webhook (real-time votes, Plugin de vote v3)
+        - "/vote claim (Steam, pseudo or IP)"
+        - Auto-check on join
+        - Vote counted twice or not counted
+        - Stats, streaks or ranking
+        - Commands or ACL
+        - Exports or events
+        - Startup or configuration
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: status
+    attributes:
+      label: "`/topserveurs.status` output"
+      description: Run it in the server console. It checks the token against the API without showing it.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: |
+        The startup line (`open77_topserveurs 1.0.0 up -- ...`) and the lines around the failure.
+        Set `DEBUG = true` in `config/server.lua`, restart the resource and reproduce for more detail.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: resource-version
+    attributes:
+      label: open77_topserveurs version
+      description: From `open77.lua` or the startup line.
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: open77-version
+    attributes:
+      label: Open77 server version
+      placeholder: 2.31.21+op77.138
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: |
+        The relevant parts of `config/server.lua` (`METHODS`, `AUTO`, `WEBHOOK`, `VOTE_INTERVAL_MINUTES`)
+        and of `server.jsonc` (`http`, `httpHandlers`). Leave the token out.
+      render: lua
+
+  - type: dropdown
+    id: network
+    attributes:
+      label: In front of the webhook listener
+      options:
+        - Nothing, direct http://SERVER_IP:PORT
+        - Reverse proxy (WEBHOOK.PROXY set)
+        - Hosting panel / NAT port mapping
+        - Webhook not used
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Framework used for rewards (opx_infinity, other), other resources listening to `topserveurs:vote`, steps to reproduce.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: My Top-Serveurs token is not anywhere in this report.
+          required: true
+        - label: The directory is named `open77_topserveurs` and `http.allowedHosts` contains `api.top-serveurs.net` and `top-games.net`.
+          required: true

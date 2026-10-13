@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Open77 documentation
+    url: https://open2077.net/docs/resource-runtime
+    about: Resource setup, permissions, http and httpHandlers configuration.
+  - name: Top-Serveurs API documentation
+    url: https://api.top-serveurs.net/documentation
+    about: Tokens, the vote plugin and API behaviour on the Top-Serveurs side.
